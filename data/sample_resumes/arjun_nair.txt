@@ -1,0 +1,18 @@
+Arjun Nair
+Email: arjun.nair@example.com
+GenAI Developer | Kochi
+
+Summary
+Builds LLM applications: retrieval-augmented generation, agents and evaluation.
+
+Skills
+Python, LLM, LangChain, RAG, HuggingFace, OpenAI API, NLP, Git
+
+Projects
+Policy Q&A Assistant: RAG over company documents using LangChain, a vector database and an LLM
+- Chunking, embeddings, retrieval and prompt design for the LLM
+Support Ticket Triage: fine-tuned a transformers model with HuggingFace for NLP classification
+Meeting Notes Generator: Whisper + GPT with Python; GenAI summaries and action items
+
+Certifications
+Generative AI with Large Language Models

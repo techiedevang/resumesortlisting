@@ -1,0 +1,21 @@
+Karan Verma
+Email: karan.verma@example.com
+B.Tech Electronics and Computer Engineering | Ghaziabad
+
+Summary
+Systems-minded programmer with strong C programming fundamentals and an interest in operating systems.
+
+Skills
+C, C++, Data Structures, Linux, Bash, Git
+
+Projects
+Mini Shell in C
+- Wrote a Unix shell in C programming with pipes, redirection and signal handling on Linux
+- Memory management and pointers throughout; debugged with gdb
+Custom Memory Allocator (C)
+- malloc/free replacement in C with free-list data structures
+Process Scheduler Simulator (C++)
+- Implemented round robin and priority algorithms in C++
+
+Coursework
+Operating Systems, Computer Networks, Data Structures, Computer Organisation

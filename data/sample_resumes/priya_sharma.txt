@@ -1,0 +1,24 @@
+Priya Sharma
+Email: priya.sharma@example.com
+Software Engineer
+
+Summary
+Full-stack leaning software engineer with primary experience in Java and
+Spring Boot, some exposure to Python.
+
+Skills
+Java, Spring Boot, JavaScript, React, MySQL, Git, Jenkins
+
+Experience
+Software Engineer — Bansal Infotech (2022 - Present)
+- Built internal CRUD applications using Spring Boot and MySQL
+- Built React dashboards consuming REST APIs
+- Used Jenkins for build pipelines
+- Basic scripting in Python for data cleanup tasks
+
+Education
+B.Tech Information Technology, 2022
+
+Projects
+- College project: Library management system in Java
+- Personal project: Weather app using React and a public REST API

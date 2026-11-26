@@ -1,0 +1,19 @@
+Sneha Iyer
+Email: sneha.iyer@example.com
+Machine Learning Engineer | Chennai
+
+Summary
+ML engineer focused on deep learning for text and images.
+
+Skills
+Python, PyTorch, TensorFlow, scikit-learn, NumPy, pandas, NLP, Computer Vision, Deep Learning, Machine Learning
+
+Experience
+ML Engineer, VisionWorks (2024 - Present)
+- Trained deep learning models in PyTorch for image classification (CNN)
+- Built NLP pipeline for sentiment analysis using BERT and Python
+- Improved machine learning model F1 from 0.71 to 0.84 with scikit-learn feature work
+
+Projects
+Medical Image Classifier: TensorFlow, Keras, CNN, computer vision
+Text Summariser: NLP, transformers, PyTorch

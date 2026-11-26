@@ -1,0 +1,12 @@
+Harsh Agarwal
+Email: harsh.agarwal@example.com
+.NET Developer | Jaipur
+
+Skills
+C#, OOP, SQL, Data Structures, Git, Azure
+
+Experience
+Software Developer, LedgerWorks (2023 - Present)
+- Developed desktop and service applications in C# using OOP and design patterns
+- Wrote SQL stored procedures; applied data structures for in-memory caching
+- Deployed one service to Azure

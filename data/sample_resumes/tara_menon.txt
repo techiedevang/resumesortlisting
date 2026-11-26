@@ -1,0 +1,25 @@
+Tara Menon
+Email: tara.menon@example.com
+B.Tech Computer Science (2026) | Pune
+
+Summary
+Java developer with solid OOP and data structures fundamentals, looking to build backend services for a banking platform.
+
+Skills
+Java, OOP, Design Patterns, Data Structures, Algorithms, SQL, Git, Linux, C++, C, JUnit
+
+Projects
+Loan Approval Service (Java, SQL)
+- Built a Java service applying OOP and design patterns (strategy, factory) to model loan rules
+- Stored applications in a SQL database and wrote JUnit unit tests reaching 85% coverage
+- Reviewed teammates' pull requests on Git, following the team's code review checklist
+Route Optimizer (C++)
+- Implemented graph algorithms and heap-based data structures in C++, cutting search time by 35%
+Student Fee Tracker (Java)
+- Normalised a SQL schema and added Java OOP validation layers
+Linux Toolkit
+- Shell scripts on Linux to automate backups, versioned in Git
+
+Achievements
+- Solved 350+ algorithm problems; ranked in the top 3% of a national coding contest
+- Led a 4-member team and ran problem solving sessions for juniors

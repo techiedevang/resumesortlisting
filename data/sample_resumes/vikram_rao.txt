@@ -1,0 +1,16 @@
+Vikram Rao
+Email: vikram.rao@example.com
+Full Stack Developer (MERN) | Bengaluru
+
+Skills
+JavaScript, TypeScript, React, Node.js, Express.js, MongoDB, HTML, CSS, REST API, Git
+
+Experience
+Full Stack Developer, CartLoop (2024 - Present)
+- Built storefront in React and JavaScript with Node.js and Express.js backend
+- Designed MongoDB schemas and REST API endpoints used by the React app
+- Added authentication with Node.js middleware; styled with CSS and Bootstrap
+
+Projects
+Chat App: React, Node.js, WebSockets, MongoDB
+Blog Platform: JavaScript, Express.js, MongoDB, HTML/CSS

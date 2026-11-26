@@ -1,0 +1,22 @@
+Ananya Singh
+Email: ananya.singh@example.com
+B.Tech Computer Science (2026) | Noida
+
+Summary
+Final-year student who enjoys problem solving in Java and C++. Solved 400+ problems on coding platforms and built two object-oriented projects.
+
+Skills
+Java, C++, C, Data Structures and Algorithms, OOP, SQL, Git, Linux
+
+Projects
+Library Management System (Java, OOP, MySQL)
+- Designed classes using OOP principles and design patterns in Java
+- Used SQL for persistence and wrote Java unit tests
+Bank Account Simulator (C++)
+- Implemented data structures (linked list, hash map) from scratch in C++
+- Applied algorithms for transaction search and sorting
+Console Chess Engine (Java)
+- Minimax search with alpha-beta pruning using data structures such as heaps
+
+Achievements
+Competitive programming: top 5% in two Java and C++ contests.

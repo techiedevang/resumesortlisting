@@ -1,0 +1,14 @@
+Tanya Arora
+Email: tanya.arora@example.com
+Computer Vision Engineer | Gurugram
+
+Skills
+Python, OpenCV, TensorFlow, Keras, Deep Learning, Computer Vision, NumPy
+
+Projects
+Helmet Detection: object detection with deep learning (CNN), TensorFlow and OpenCV
+Face Attendance: computer vision pipeline in Python and OpenCV
+Plant Disease Classifier: image classification, Keras, deep learning
+
+Internship
+CV Intern, TrafficAI: trained detection models, evaluated with NumPy metrics

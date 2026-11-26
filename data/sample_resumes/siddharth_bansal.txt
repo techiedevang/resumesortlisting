@@ -1,0 +1,12 @@
+Siddharth Bansal
+Email: siddharth.bansal@example.com
+Cloud Engineer | Mumbai
+
+Skills
+Azure, GCP, AWS, Terraform, Kubernetes, Docker, CI/CD, Linux
+
+Experience
+Cloud Engineer, SkyBridge (2022 - Present)
+- Migrated workloads to Azure and Google Cloud (GCP) with Terraform
+- Kubernetes clusters on GCP; Docker images through CI/CD pipelines
+- AWS cost review and Linux patching automation

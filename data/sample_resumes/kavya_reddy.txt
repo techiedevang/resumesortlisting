@@ -1,0 +1,12 @@
+Kavya Reddy
+Email: kavya.reddy@example.com
+Frontend Engineer | Hyderabad
+
+Skills
+Angular, TypeScript, JavaScript, HTML, CSS, Node.js, REST API, Git
+
+Experience
+Frontend Engineer, BlueLeaf (2023 - Present)
+- Built enterprise dashboards in Angular and TypeScript
+- Integrated REST API services; small Node.js utilities
+- HTML/CSS design system used across 4 products

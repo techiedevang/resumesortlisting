@@ -1,0 +1,12 @@
+Rajat Sharma
+Email: rajat.sharma@example.com
+Android Developer | Faridabad
+
+Skills
+Kotlin, Java, OOP, SQL, Git, REST API
+
+Experience
+Android Developer, AppForge (2023 - Present)
+- Built Android apps in Kotlin and Java using OOP and clean architecture
+- Integrated REST API endpoints; local storage with SQL
+- Published 3 apps with 100k downloads

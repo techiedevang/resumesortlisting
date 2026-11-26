@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in — Screen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="status-wrap">
+  <div class="brand"><span class="brand-mark">§</span><span class="brand-name">Screen</span></div>
+  <h1 id="lgTitle">Recruiter sign in</h1>
+  <p class="panel-lead" id="lgLead">Sign in to rank resumes and manage roles.</p>
+  <form id="lgForm" class="status-form">
+    <label for="lgUser">Username</label>
+    <input type="text" id="lgUser" required autocomplete="username">
+    <label for="lgPass">Password</label>
+    <input type="password" id="lgPass" required autocomplete="current-password">
+    <div class="form-actions"><button class="btn-primary" type="submit" id="lgBtn">Sign in</button></div>
+  </form>
+  <div id="lgMsg" class="status-result" aria-live="polite" hidden></div>
+
+  <div id="adminHint" class="login-hint-card">
+    <div class="login-hint-title">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      <span>Demo Login Credentials</span>
+    </div>
+    <div class="login-hint-grid">
+      <div class="login-hint-item">
+        <span class="login-hint-label">Username</span>
+        <button type="button" class="login-hint-badge" onclick="fillField('lgUser', 'admin')" title="Click to fill username">
+          <code>admin</code>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+      <div class="login-hint-item">
+        <span class="login-hint-label">Password</span>
+        <button type="button" class="login-hint-badge" onclick="fillField('lgPass', 'admin@123')" title="Click to fill password">
+          <code>admin@123</code>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+    </div>
+    <button type="button" class="login-autofill-action" onclick="autoFillBoth('admin', 'admin@123')">
+      ⚡ One-Click Auto Fill
+    </button>
+  </div>
+
+  <p class="upload-hint">Candidates: <a href="/status">check your application status</a></p>
+</main>
+<script>
+let setup=false;
+const msg=document.getElementById('lgMsg');
+const adminHint=document.getElementById('adminHint');
+
+function fillField(id, val) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.value = val;
+    el.focus();
+  }
+}
+
+function autoFillBoth(u, p) {
+  fillField('lgUser', u);
+  fillField('lgPass', p);
+}
+
+fetch('/api/auth/me').then(r=>r.json()).then(d=>{
+  if(d.user){location.href='/';return;}
+  setup=d.setup_needed;
+  if(setup){
+    if(adminHint) adminHint.hidden = true;
+    document.getElementById('lgTitle').textContent='Create the recruiter account';
+    document.getElementById('lgLead').textContent='No account exists yet. The first one you create becomes the recruiter login. Use at least 8 characters.';
+    document.getElementById('lgBtn').textContent='Create account';
+    document.getElementById('lgPass').autocomplete='new-password';
+  }
+});
+document.getElementById('lgForm').addEventListener('submit',async e=>{
+  e.preventDefault(); msg.hidden=true;
+  const r=await fetch(setup?'/api/auth/setup':'/api/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({username:document.getElementById('lgUser').value,password:document.getElementById('lgPass').value})});
+  const d=await r.json();
+  if(r.ok){location.href='/';return;}
+  msg.textContent=d.error||'Something went wrong.'; msg.className='status-result bad'; msg.hidden=false;
+});
+</script>
+</body>
+</html>

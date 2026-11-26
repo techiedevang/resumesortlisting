@@ -1,0 +1,24 @@
+Rohan Kapoor
+Email: rohan.kapoor@example.com
+Data Analyst
+
+Summary
+Data analyst with a strong background in reporting, dashboards, and
+business analytics. Limited backend/software engineering exposure.
+
+Skills
+Excel, SQL, Power BI, Tableau, Python (Pandas, NumPy), Data Analysis,
+Data Visualization, Communication, Stakeholder Management
+
+Experience
+Data Analyst — Meridian Retail Analytics (2021 - Present)
+- Built Power BI dashboards for weekly sales reporting
+- Wrote SQL queries to extract and transform data from a data warehouse
+- Automated recurring reports using Python and Pandas
+- Presented findings to stakeholders across merchandising and finance
+
+Education
+B.Com with a minor in Statistics, 2021
+
+Certifications
+Microsoft Excel Expert, Power BI Data Analyst Associate

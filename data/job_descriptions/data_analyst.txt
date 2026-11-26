@@ -1,0 +1,9 @@
+Data Analyst
+
+Turn data into dashboards for business teams.
+
+Requirements:
+- SQL and advanced Excel
+- Power BI or Tableau dashboards
+- Statistics and data analysis; Python (pandas) is a plus
+- Clear communication skills with stakeholders

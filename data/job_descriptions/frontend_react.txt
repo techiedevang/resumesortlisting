@@ -1,0 +1,9 @@
+Frontend Developer - React
+
+Build user interfaces for our e-commerce product.
+
+Requirements:
+- Strong HTML, CSS and JavaScript; TypeScript preferred
+- Hands-on React experience with reusable components
+- Experience consuming REST API services
+- Git workflow; responsive design

@@ -1,0 +1,30 @@
+Aarav Mehta
+Email: aarav.mehta@example.com
+Backend Developer
+
+Summary
+Backend developer with 2 years of experience building REST APIs in
+Python and Django for a fintech product. Comfortable across the stack
+from data modelling to deployment.
+
+Skills
+Python, Django, Flask, REST API design, PostgreSQL, MySQL, Git, GitHub
+Actions, Docker, AWS (EC2, S3), Agile/Scrum, Jira
+
+Experience
+Backend Developer — Finlytics Pvt Ltd (2023 - Present)
+- Built and maintained REST APIs in Django serving 50k+ daily requests
+- Designed PostgreSQL schemas and optimised slow queries, cutting p95
+  latency by 40%
+- Set up CI/CD pipeline with GitHub Actions and deployed via Docker on AWS EC2
+- Participated in sprint planning, stand-ups and code reviews
+
+Associate Software Engineer — CodeNest Solutions (2022 - 2023)
+- Developed internal tools using Flask and MySQL
+- Wrote unit and integration tests, improving coverage from 40% to 75%
+
+Education
+B.Tech Computer Science, 2022
+
+Soft skills: strong communicator, comfortable working with cross-functional
+product and design teams, mentored two junior interns.

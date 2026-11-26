@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Screen — Resume Screening &amp; Shortlisting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ===================== Sidebar: job postings ===================== -->
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark">§</span>
+      <span class="brand-name">Screen</span>
+    </div>
+    <p class="brand-tag">Two tools for screening resumes.</p>
+
+    <div class="mode-switch" role="tablist" aria-label="Choose a tool">
+      <button class="mode-btn active" id="modeRank" role="tab" aria-selected="true" type="button">
+        <span class="mode-title">Rank resumes for a job</span>
+        <span class="mode-sub">Start from a job description</span>
+      </button>
+      <button class="mode-btn" id="modeAnalyze" role="tab" aria-selected="false" type="button">
+        <span class="mode-title">Find a resume's best role</span>
+        <span class="mode-sub">Start from a resume</span>
+      </button>
+    </div>
+
+    <!-- Tool 1: job-based ranking -->
+    <div class="side-section" id="sideRank">
+      <button class="btn-new-role" id="btnNewRole" type="button">+ New role</button>
+      <p class="sidebar-label">Your roles</p>
+      <nav class="role-list" id="roleList" aria-label="Job postings">
+        <!-- populated by script.js -->
+        <p class="empty-hint" id="roleListEmpty">No roles yet. Create one to get started.</p>
+      </nav>
+    </div>
+
+    <!-- Tool 2: resume-based role detection -->
+    <div class="side-section hidden" id="sideAnalyze">
+      <p class="side-note">Drop in resumes and see, for each one:</p>
+      <ul class="side-list">
+        <li>the role it fits best</li>
+        <li>how sure the system is</li>
+        <li>the skills it relies on most</li>
+      </ul>
+      <p class="side-note">No job description needed.</p>
+    </div>
+
+    <button class="nav-btn" id="btnOutbox" type="button">Outbox <span class="mail-mode" id="mailMode"></span></button>
+    <a class="nav-btn nav-link" href="/status" target="_blank" rel="noopener">Candidate status page ↗</a>
+    <div class="signed-in"><span>Signed in as <strong id="whoami"></strong></span> <button class="link-btn" id="btnSignOut" type="button">Sign out</button></div>
+    <button class="nav-btn about-btn" id="btnAbout" type="button">How it works</button>
+  </aside>
+
+  <!-- ===================== Main panel ===================== -->
+  <main class="main">
+
+    <!-- ---- Tool 1 landing: no role selected ---- -->
+    <section class="panel" id="panelEmpty">
+      <div class="empty-state">
+        <h1>Rank resumes for a job</h1>
+        <p>Create a role by pasting a job description, then upload resumes. Each one is scored against the job and ranked, with the matched and missing skills shown for every candidate.</p>
+        <div class="empty-actions">
+          <button class="btn-primary" id="btnEmptyNew" type="button">Create a role</button>
+          <button class="btn-secondary" id="btnLoadDemo" type="button">Load demo data</button>
+        </div>
+        <p class="upload-hint" id="demoStatus" aria-live="polite"></p>
+        <p class="switch-hint">Want to know which role a resume suits instead? <button type="button" class="link-btn" id="btnEmptyAnalyze">Find a resume's best role</button></p>
+      </div>
+    </section>
+
+    <!-- ---- Analyze: job-independent role + skill priority ---- -->
+    <section class="panel hidden" id="panelAnalyze">
+      <h1>Find a resume's best role</h1>
+      <p class="panel-lead">No job description needed. Drop in resumes and each one is placed in the role it fits best, with a confidence level and the skills it relies on most.</p>
+
+      <div class="upload-zone" id="analyzeZone">
+        <input type="file" id="analyzeInput" multiple accept=".pdf,.docx,.txt" hidden>
+        <p class="upload-title">Drop resumes here, or <button type="button" id="btnAnalyzeBrowse" class="link-btn">browse files</button></p>
+        <p class="upload-hint">PDF, DOCX, or TXT · nothing is stored</p>
+      </div>
+      <p class="demo-line"><button type="button" id="btnAnalyzeDemo" class="link-btn">Or try it on the 25 demo resumes</button></p>
+
+      <div id="analyzeErrors" class="upload-errors hidden"></div>
+      <div id="analyzeSummary" class="analyze-summary hidden"></div>
+      <div id="analyzeResults" class="analyze-results"></div>
+    </section>
+
+    <!-- ---- Outbox ---- -->
+    <section class="panel hidden" id="panelOutbox">
+      <h1>Outbox</h1>
+      <p class="panel-lead" id="outboxLead"></p>
+      <div id="outboxList"></div>
+    </section>
+
+    <!-- ---- About: explainer for reviewers ---- -->
+    <section class="panel hidden" id="panelAbout">
+      <h1>How it works</h1>
+      <p class="panel-lead">Screen is a first-pass resume screening tool. A recruiter gets a ranked shortlist with reasons, not just a number.</p>
+
+      <h2 class="about-h">The problem</h2>
+      <p>One job opening can bring hundreds of resumes. Reading them all by hand is slow, and two recruiters often shortlist differently. Screen does the first pass the same way every time and shows its working.</p>
+
+      <h2 class="about-h">Two things it does</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Rank resumes for a job</h3>
+          <p>Starts from a job description. Upload resumes, get a ranked list. The score rewards evidence: 30% text similarity, 55% skills shown in projects or experience (skills only listed earn 40% credit), 15% depth of described work. Copying the job description is detected and penalised. Each candidate lands in Selected (80 and up), Under review (60 to 80) or Rejected, and the recruiter approves any message sent.</p>
+        </div>
+        <div class="about-card">
+          <h3>Find a resume's best role</h3>
+          <p>Starts from a resume; no job needed. The system works out the best-fit role (software developer, backend, web, AI/ML, data analyst, DevOps) as percentages, and ranks the person's skills as Primary, Secondary or Mentioned by how often they appear.</p>
+        </div>
+      </div>
+
+      <h2 class="about-h">How role detection works</h2>
+      <p>Each role is a weighted list of skills. Java, C and C++ weigh heavily for Software Developer; React and JavaScript for Web Developer; PyTorch and NLP for AI/ML. A skill that appears in several projects counts for more than one that sits once in a list. The scores are turned into percentages, and the gap between the top two roles sets the confidence. A narrow gap is shown as Low confidence, because the person has a mixed profile.</p>
+
+      <h2 class="about-h">Try it in five minutes</h2>
+      <ol class="about-steps">
+        <li>Press <strong>Load demo data</strong>. Five jobs appear, each already scored against 25 sample resumes.</li>
+        <li>Open <strong>Java Developer</strong>. Candidates strong in Java, C++ and data structures rank first. Open one to see the score breakdown and best-fit role.</li>
+        <li>Open <strong>Frontend Developer - React</strong>. The same resumes now rank in a different order.</li>
+        <li>Switch to <strong>Find a resume's best role</strong> and try the demo set. Each resume lands in a role with a confidence level.</li>
+        <li>Upload a resume of your own (PDF, DOCX or TXT) in either view.</li>
+      </ol>
+
+      <h2 class="about-h">What to keep in mind</h2>
+      <ul class="about-list">
+        <li>The demo resumes are invented. They were written to span roles, so the match against their labels is a sanity check, not a benchmark.</li>
+        <li>Matching is by words, not meaning. "Built scalable APIs" is not seen as the same as "REST API development". Embedding-based matching is the planned upgrade.</li>
+        <li>Scanned image PDFs are not readable without OCR.</li>
+        <li>The tool supports a recruiter. It does not decide who gets hired.</li>
+      </ul>
+    </section>
+
+    <!-- ---- New role form ---- -->
+    <section class="panel hidden" id="panelNewRole">
+      <h1>New role</h1>
+      <form id="formNewRole">
+        <label for="jobTitle">Role title</label>
+        <input type="text" id="jobTitle" name="title" placeholder="e.g. Backend Engineer, Python/Django" required>
+
+        <label for="jobDescription">Job description</label>
+        <textarea id="jobDescription" name="description" rows="12"
+          placeholder="Paste the full job description here — responsibilities, required skills, experience level. The more detail, the better the match quality."
+          required></textarea>
+
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" id="btnCancelNewRole">Cancel</button>
+          <button type="submit" class="btn-primary">Create role</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ---- Role detail: JD + upload + ranked list ---- -->
+    <section class="panel hidden" id="panelRole">
+      <header class="role-header">
+        <div>
+          <h1 id="roleTitle"></h1>
+          <p class="role-meta" id="roleMeta"></p>
+        </div>
+        <div class="role-header-actions">
+          <button class="btn-secondary" id="btnToggleJD" type="button">View description</button>
+          <button class="btn-danger-ghost" id="btnDeleteRole" type="button">Delete role</button>
+        </div>
+      </header>
+
+      <div class="jd-viewer hidden" id="jdViewer"></div>
+
+      <div class="overview" id="overview"></div>
+
+      <div class="role-tools">
+        <div class="tool-group">
+          <span class="tool-label">Decision bands</span>
+          <label class="inline">Selected at <input type="number" id="selAt" min="1" max="100" step="1"></label>
+          <label class="inline">Under review from <input type="number" id="revAt" min="1" max="99" step="1"></label>
+          <button class="btn-secondary small" id="btnSaveBands" type="button">Save</button>
+          <span class="tool-msg" id="bandsMsg" aria-live="polite"></span>
+        </div>
+        <div class="tool-group">
+          <label class="inline"><input type="checkbox" id="blindToggle"> Blind mode (hide names, emails, colleges)</label>
+          <a class="btn-secondary small" id="btnExport" href="#">Export CSV</a>
+          <button class="btn-secondary small" id="btnCompare" type="button" disabled>Compare</button>
+          <button class="btn-secondary small" id="btnNotifyAll" type="button">Message candidates…</button>
+        </div>
+      </div>
+      <p class="upload-hint" id="notifyMsg" aria-live="polite"></p>
+
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="fileInput" multiple accept=".pdf,.docx,.txt" hidden>
+        <p class="upload-title">Drop resumes here, or <button type="button" id="btnBrowse" class="link-btn">browse files</button></p>
+        <p class="upload-hint">PDF, DOCX, or TXT · scored the moment they land</p>
+      </div>
+
+      <div id="uploadErrors" class="upload-errors hidden"></div>
+
+      <div class="candidates-header">
+        <h2>Ranked candidates</h2>
+        <span class="candidate-count" id="candidateCount"></span>
+      </div>
+
+      <p class="empty-hint" id="candidatesEmpty">No resumes scored yet for this role.</p>
+
+      <div class="candidate-table" id="candidateTable"></div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ===================== Candidate detail drawer ===================== -->
+<div class="drawer-backdrop hidden" id="drawerBackdrop">
+  <aside class="drawer" id="drawer" role="dialog" aria-label="Candidate detail">
+    <button class="drawer-close" id="drawerClose" aria-label="Close">×</button>
+    <div id="drawerContent"></div>
+  </aside>
+</div>
+
+<div class="drawer-backdrop hidden" id="compareBackdrop">
+  <aside class="drawer wide" role="dialog" aria-label="Compare candidates">
+    <button class="drawer-close" id="compareClose" aria-label="Close">×</button>
+    <div id="compareContent"></div>
+  </aside>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+Divya Pandey
+Email: divya.pandey@example.com
+Data Scientist | Hyderabad
+
+Skills
+Python, scikit-learn, pandas, NumPy, Statistics, Machine Learning, SQL, Matplotlib
+
+Experience
+Data Scientist, InsightLoop (2023 - Present)
+- Built machine learning models (scikit-learn) to predict customer churn
+- Feature engineering with pandas and NumPy; regression and hypothesis testing for experiment design
+- Statistical analysis communicated to product teams
+
+Projects
+Credit risk model: scikit-learn, machine learning, statistics
+Demand forecasting: pandas, NumPy, regression

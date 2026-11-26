@@ -1,0 +1,13 @@
+Ishita Malhotra
+Email: ishita.malhotra@example.com
+Java Backend Developer | Gurugram
+
+Skills
+Java, Spring Boot, REST API, SQL, Oracle DB, MongoDB, Hibernate, Git, Docker
+
+Experience
+Backend Developer, FinServe Tech (2023 - Present)
+- Built microservices in Java with Spring Boot exposing REST APIs
+- Modelled data in Oracle DB and MongoDB; tuned SQL queries
+- Hibernate ORM mapping; unit tests for Java services
+- Containerised services with Docker and deployed through CI/CD

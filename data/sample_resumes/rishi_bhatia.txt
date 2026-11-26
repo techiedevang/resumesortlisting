@@ -1,0 +1,12 @@
+Rishi Bhatia
+Email: rishi.bhatia@example.com
+B.Tech Computer Science (2026) | Meerut
+
+Summary
+Strong Java and OOP fundamentals. Good understanding of data structures and algorithms. SQL, Git, Linux basics. Strong problem solving skills. Develop and maintain services in Java using OOP principles and design patterns. Work with SQL databases and write unit tests. Use Git and follow code review practice.
+
+Skills
+Java, OOP, Design Patterns, Data Structures, Algorithms, SQL, Unit Tests, Git, Linux, C++, C, Problem Solving
+
+Education
+B.Tech Computer Science (2026)

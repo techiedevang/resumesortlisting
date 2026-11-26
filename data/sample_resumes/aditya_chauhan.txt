@@ -1,0 +1,14 @@
+Aditya Chauhan
+Email: aditya.chauhan@example.com
+Python Backend Developer | Noida
+
+Skills
+Python, Django, Flask, REST API, PostgreSQL, SQL, Docker, Git
+
+Experience
+Backend Developer, ShopSphere (2023 - Present)
+- Built REST API services in Django and Flask handling 40k requests per day
+- Designed PostgreSQL schemas; optimised slow SQL queries
+- Wrote Python background jobs; packaged services with Docker
+Intern, DataNest
+- Python scripts with pandas for reporting

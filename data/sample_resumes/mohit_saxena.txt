@@ -1,0 +1,15 @@
+Mohit Saxena
+Email: mohit.saxena@example.com
+B.Tech IT (2026) | Kanpur
+
+Summary
+Curious learner trying many areas.
+
+Skills
+Java, Python, HTML, CSS, JavaScript, Machine Learning, SQL
+
+Projects
+Student Portal: Java, SQL
+Personal Website: HTML, CSS, JavaScript
+House Price Predictor: Python, machine learning
+Attendance App: Java

@@ -1,0 +1,12 @@
+Nikhil Dubey
+Email: nikhil.dubey@example.com
+Competitive Programmer | Varanasi
+
+Skills
+C++, C, Java, Data Structures, Algorithms
+
+Highlights
+- Competitive programming: 1700+ rating; 800 problems solved
+- Strong in data structures (segment trees, graphs) and algorithms (dynamic programming)
+- Implemented all solutions in C++; also practised in Java and C
+- Teaching assistant for Data Structures course

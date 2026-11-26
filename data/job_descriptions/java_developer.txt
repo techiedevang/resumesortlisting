@@ -1,0 +1,15 @@
+Java Developer (Fresher / 0-2 years)
+
+We build core services for a banking platform and are hiring a Java Developer.
+
+Responsibilities:
+- Develop and maintain services in Java using OOP principles and design patterns
+- Apply data structures and algorithms to build efficient features
+- Work with SQL databases and write unit tests
+- Use Git and follow code review practice
+
+Requirements:
+- Strong Java and OOP fundamentals; C++ or C is a plus
+- Good understanding of data structures and algorithms
+- SQL, Git, Linux basics
+- Strong problem solving skills

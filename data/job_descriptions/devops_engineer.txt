@@ -1,0 +1,9 @@
+DevOps Engineer
+
+Own our cloud platform and release pipeline.
+
+Requirements:
+- Kubernetes and Docker in production
+- Terraform and AWS or Azure
+- CI/CD with Jenkins or GitHub Actions
+- Linux and Bash; Git

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check your application status</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="status-wrap">
+  <div class="brand"><span class="brand-mark">§</span><span class="brand-name">Screen</span></div>
+  <h1>Check your application status</h1>
+  <p class="panel-lead">Enter the email address on your resume and the reference from your confirmation message.</p>
+  <form id="statusForm" class="status-form">
+    <label for="stEmail">Email address</label>
+    <input type="email" id="stEmail" required autocomplete="email">
+    <label for="stRef">Reference (like SCR-1A2B3C)</label>
+    <input type="text" id="stRef" required autocomplete="off">
+    <div class="form-actions"><button class="btn-primary" type="submit">Check status</button></div>
+  </form>
+  <div id="statusResult" class="status-result" aria-live="polite"></div>
+</main>
+<script>
+const f=document.getElementById('statusForm'), out=document.getElementById('statusResult');
+f.addEventListener('submit', async e=>{
+  e.preventDefault(); out.textContent='Checking…'; out.className='status-result';
+  const r=await fetch('/api/status/lookup',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({email:document.getElementById('stEmail').value,reference:document.getElementById('stRef').value})});
+  const d=await r.json();
+  out.textContent='';
+  const box=document.createElement('div');
+  if(!r.ok){out.className='status-result bad';box.textContent=d.error;}
+  else{
+    out.className='status-result st-'+d.status;
+    const h=document.createElement('h2');h.textContent=d.label;
+    const p=document.createElement('p');
+    p.textContent=d.status==='received'
+      ? 'Hello '+d.name+', your application for '+d.job_title+' has been received. No decision has been shared yet.'
+      : 'Hello '+d.name+', this is the latest update on your application for '+d.job_title+'.';
+    box.append(h,p);
+  }
+  out.append(box);
+});
+</script>
+</body>
+</html>

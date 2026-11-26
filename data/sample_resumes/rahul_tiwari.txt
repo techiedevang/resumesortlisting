@@ -1,0 +1,13 @@
+Rahul Tiwari
+Email: rahul.tiwari@example.com
+DevOps Engineer | Pune
+
+Skills
+Kubernetes, Docker, Terraform, AWS, CI/CD, Jenkins, Linux, Bash, Git, Python
+
+Experience
+DevOps Engineer, CloudNest (2023 - Present)
+- Ran production workloads on Kubernetes with Helm charts; containers built with Docker
+- Provisioned AWS infrastructure with Terraform (infrastructure as code)
+- Built CI/CD pipelines in Jenkins and GitHub Actions cutting release time by 60%
+- Linux server hardening and Bash automation

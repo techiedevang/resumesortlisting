@@ -1,0 +1,16 @@
+Pooja Mishra
+Email: pooja.mishra@example.com
+Business Data Analyst | Lucknow
+
+Summary
+Analyst who turns raw data into dashboards and decisions.
+
+Skills
+SQL, Excel, Power BI, Tableau, Data Analysis, Statistics, Python (pandas)
+
+Experience
+Data Analyst, RetailEdge (2023 - Present)
+- Built Power BI dashboards tracking sales, margin and churn for leadership
+- Wrote SQL queries on a warehouse; automated weekly Excel reports with pandas
+- Ran hypothesis testing and regression to size the impact of promotions
+- Data visualization in Tableau for the supply-chain team

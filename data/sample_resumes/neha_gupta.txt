@@ -1,0 +1,20 @@
+Neha Gupta
+Email: neha.gupta@example.com
+Frontend Developer | Delhi
+
+Summary
+Frontend developer building responsive interfaces with React and JavaScript.
+
+Skills
+HTML5, CSS3, JavaScript, React, TypeScript, Tailwind, Git
+
+Experience
+Frontend Intern, PixelCraft Studio (2025)
+- Built reusable React components and pages with HTML, CSS and JavaScript
+- Migrated a JavaScript codebase to TypeScript and React hooks
+- Consumed REST API endpoints and improved Lighthouse score from 62 to 91
+
+Projects
+Portfolio Site: React, Tailwind and CSS animations
+E-commerce UI: React, JavaScript, responsive HTML/CSS layouts
+Weather Dashboard: JavaScript, REST API, React

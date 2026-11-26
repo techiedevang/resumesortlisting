@@ -1,0 +1,12 @@
+Simran Kaur
+Email: simran.kaur@example.com
+PHP and Web Developer | Chandigarh
+
+Skills
+PHP, Laravel, MySQL, HTML, CSS, JavaScript, Bootstrap
+
+Experience
+Web Developer, BrightSites (2022 - Present)
+- Built client websites with PHP and Laravel, HTML5, CSS3 and Bootstrap
+- Added JavaScript interactivity and MySQL-backed forms
+- Delivered 15+ responsive web sites

@@ -1,0 +1,9 @@
+Machine Learning Engineer
+
+Train and ship models for text and image products.
+
+Requirements:
+- Python with NumPy, pandas and scikit-learn
+- Deep learning with PyTorch or TensorFlow
+- Experience in NLP or computer vision; exposure to LLM and RAG pipelines is a plus
+- Strong statistics background; Git
